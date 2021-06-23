@@ -1,46 +1,46 @@
 view: liquor_sales_predicted {
-  derived_table: {
-    sql: SELECT ROW_NUMBER() OVER(ORDER BY store_number,item_number) as pk
-      ,store_number
-      ,city
-      ,zip_code
-      ,county_number
-      ,category
-      ,vendor_number
-      ,item_number
-      ,DATE(date) as date
-      ,pack
-      ,tsi
-      ,item_description
-      , SPLIT(TRIM(replace(replace(store_location,'POINT (',''),')','')),' ')[safe_ordinal(1)] as store_longitude
-      , SPLIT(TRIM(replace(replace(store_location,'POINT (',''),')','')),' ')[safe_ordinal(2)] as store_latitude
-      ,CASE WHEN lower(item_description) LIKE '%titos%' THEN 'Titos'
-            WHEN lower(item_description) LIKE '%smirnoff%' THEN 'Smirnoff'
-            WHEN lower(item_description) LIKE '%jack daniels%' THEN 'Jack Daniels'
-            WHEN lower(item_description) LIKE '%hennessy%' THEN 'Hennessy'
-            WHEN lower(item_description) LIKE '%hawkeye%' THEN 'Hawkeye'
-            WHEN lower(item_description) LIKE '%fireball%' THEN 'Fireball'
-            WHEN lower(item_description) LIKE '%crown royal%' THEN 'Crown Royal'
-            WHEN lower(item_description) LIKE '%captain morgan%' THEN 'Captain Morgan'
-            WHEN lower(item_description) LIKE '%black velvet%' THEN 'Fireball'
-            ELSE 'All Other Brands'
-          END  AS brand
-      ,SUM(bottle_volume_ml) as bottle_volume_ml
-      ,SUM(state_bottle_cost) as state_bottle_cost
-      ,SUM(state_bottle_retail) as state_bottle_retail
-      ,SUM(bottles_sold) as bottles_sold
-      ,SUM(sale_dollars) as sale_dollars
-      ,SUM(volume_sold_liters) as volume_sold_liters
-      ,SUM(bottles_sold) as total_bottles_sold
-      ,SUM(predicted_bottles_sold.tables.value) as predicted_total_bottles_sold
-FROM `camus-demandforecasting.prediction_training_validation_2weeks_v1_2020_07_08T06_43_16_117Z.predictions`
+  sql_table_name: `looker-private-demo.liquor_sales.LR_FRW3A1624363204268_liquor_sales_predicted` ;;
+#   derived_table: {
+#     sql: SELECT ROW_NUMBER() OVER(ORDER BY store_number,item_number) as pk
+#       ,store_number
+#       ,city
+#       ,zip_code
+#       ,county_number
+#       ,category
+#       ,vendor_number
+#       ,item_number
+#       ,DATE(date) as date
+#       ,pack
+#       ,tsi
+#       ,item_description
+#       , SPLIT(TRIM(replace(replace(store_location,'POINT (',''),')','')),' ')[safe_ordinal(1)] as store_longitude
+#       , SPLIT(TRIM(replace(replace(store_location,'POINT (',''),')','')),' ')[safe_ordinal(2)] as store_latitude
+#       ,CASE WHEN lower(item_description) LIKE '%titos%' THEN 'Titos'
+#             WHEN lower(item_description) LIKE '%smirnoff%' THEN 'Smirnoff'
+#             WHEN lower(item_description) LIKE '%jack daniels%' THEN 'Jack Daniels'
+#             WHEN lower(item_description) LIKE '%hennessy%' THEN 'Hennessy'
+#             WHEN lower(item_description) LIKE '%hawkeye%' THEN 'Hawkeye'
+#             WHEN lower(item_description) LIKE '%fireball%' THEN 'Fireball'
+#             WHEN lower(item_description) LIKE '%crown royal%' THEN 'Crown Royal'
+#             WHEN lower(item_description) LIKE '%captain morgan%' THEN 'Captain Morgan'
+#             WHEN lower(item_description) LIKE '%black velvet%' THEN 'Fireball'
+#             ELSE 'All Other Brands'
+#           END  AS brand
+#       ,SUM(bottle_volume_ml) as bottle_volume_ml
+#       ,SUM(state_bottle_cost) as state_bottle_cost
+#       ,SUM(state_bottle_retail) as state_bottle_retail
+#       ,SUM(bottles_sold) as bottles_sold
+#       ,SUM(sale_dollars) as sale_dollars
+#       ,SUM(volume_sold_liters) as volume_sold_liters
+#       ,SUM(bottles_sold) as total_bottles_sold
+#       ,SUM(predicted_bottles_sold.tables.value) as predicted_total_bottles_sold
+# FROM `looker-private-demo.liquor_sales.LR_FRW3A1624363204268_liquor_sales_predicted`
 
-LEFT JOIN UNNEST(predicted_bottles_sold) as predicted_bottles_sold
-GROUP BY 2,3,4,5,6,7,8,9,10,11,12,13,14,15
- ;;
-#FROM `camus-demandforecasting.prediction_training_validation_2weeks_v1_2020_07_08T06_43_16_117Z.predictions`
-sql_trigger_value: SELECT CURRENT_DATE ;;
-  }
+# LEFT JOIN UNNEST(predicted_bottles_sold) as predicted_bottles_sold
+# GROUP BY 2,3,4,5,6,7,8,9,10,11,12,13,14,15
+# ;;
+# #FROM `camus-demandforecasting.prediction_training_validation_2weeks_v1_2020_07_08T06_43_16_117Z.predictions`
+#   }
   drill_fields: [item_description,category,store_number,actual_plus_forecasted_bottles,actual_plus_forecasted_revenue,actual_plus_forecasted_gross_margin,predicted_aur_promotion]
 
 

@@ -75,9 +75,9 @@
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
     row: 2
-    col: 6
-    width: 6
-    height: 4
+    col: 9
+    width: 8
+    height: 6
   - title: Bottles Sold 2
     name: Bottles Sold 2
     model: demand_forecasting
@@ -149,10 +149,10 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 6
-    col: 6
-    width: 6
-    height: 4
+    row: 8
+    col: 9
+    width: 8
+    height: 6
   - title: Brand 1
     name: Brand 1
     model: demand_forecasting
@@ -211,7 +211,7 @@
     row: 2
     col: 0
     width: 3
-    height: 4
+    height: 6
   - title: Brand 2
     name: Brand 2
     model: demand_forecasting
@@ -267,10 +267,10 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 6
+    row: 8
     col: 0
     width: 3
-    height: 4
+    height: 6
   - title: Brand 3
     name: Brand 3
     model: demand_forecasting
@@ -326,10 +326,10 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 10
+    row: 14
     col: 0
     width: 3
-    height: 4
+    height: 6
   - title: Brand 4
     name: Brand 4
     model: demand_forecasting
@@ -385,10 +385,10 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 14
+    row: 20
     col: 0
     width: 3
-    height: 4
+    height: 6
   - title: Brand 5
     name: Brand 5
     model: demand_forecasting
@@ -444,10 +444,10 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 18
+    row: 26
     col: 0
     width: 3
-    height: 4
+    height: 6
   - title: Bottles Sold 3
     name: Bottles Sold 3
     model: demand_forecasting
@@ -519,10 +519,10 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 10
-    col: 6
-    width: 6
-    height: 4
+    row: 14
+    col: 9
+    width: 8
+    height: 6
   - title: Bottles Sold 4
     name: Bottles Sold 4
     model: demand_forecasting
@@ -594,10 +594,10 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 14
-    col: 6
-    width: 6
-    height: 4
+    row: 20
+    col: 9
+    width: 8
+    height: 6
   - title: Bottles Sold 5
     name: Bottles Sold 5
     model: demand_forecasting
@@ -669,325 +669,10 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 18
-    col: 6
-    width: 6
-    height: 4
-  - title: Signals 1
-    name: Signals 1
-    model: demand_forecasting
-    explore: liquor_sales_predicted
-    type: looker_column
-    fields: [metrics.adjusted_score_wow, metrics.measurement_week]
-    filters:
-      metrics.is_iowa: 'Yes'
-      brand_rank.rank: '1'
-    sorts: [metrics.measurement_week]
-    limit: 500
-    column_limit: 50
-    query_timezone: America/Los_Angeles
-    x_axis_gridlines: false
-    y_axis_gridlines: false
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: false
-    show_x_axis_ticks: false
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    point_style: none
-    show_value_labels: true
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    y_axes: [{label: '', orientation: left, series: [{axisId: metrics.adjusted_score_wow,
-            id: metrics.adjusted_score_wow, name: Index WoW}], showLabels: false,
-        showValues: false, unpinAxis: false, tickDensity: default, tickDensityCustom: 5,
-        type: linear}]
-    series_types: {}
-    series_colors:
-      metrics.adjusted_score_wow: "#FBBC04"
-    trend_lines: [{color: "#9AA0A6", label_position: right, period: 4, regression_type: average,
-        series_index: 1, show_label: true, label_type: string, label: 4 Wk. Avg.}]
-    show_null_points: true
-    interpolation: linear
-    defaults_version: 1
-    title_hidden: true
-    listen:
-      Calendar Date: metrics.measurement_date
-      Frequency: liquor_sales_predicted.frequency
-      Scenario: liquor_sales_predicted.promotion_amount
-      Promotion Date: liquor_sales_predicted.promotion_date
-      Rank By: brand_rank.rank_metric
-    row: 2
-    col: 18
-    width: 6
-    height: 4
-  - title: Signals 2
-    name: Signals 2
-    model: demand_forecasting
-    explore: liquor_sales_predicted
-    type: looker_column
-    fields: [metrics.adjusted_score_wow, metrics.measurement_week]
-    filters:
-      metrics.is_iowa: 'Yes'
-      brand_rank.rank: '2'
-    sorts: [metrics.measurement_week]
-    limit: 500
-    column_limit: 50
-    query_timezone: America/Los_Angeles
-    x_axis_gridlines: false
-    y_axis_gridlines: false
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: false
-    show_x_axis_ticks: false
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    point_style: none
-    show_value_labels: true
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    y_axes: [{label: '', orientation: left, series: [{axisId: metrics.adjusted_score_wow,
-            id: metrics.adjusted_score_wow, name: Index WoW}], showLabels: false,
-        showValues: false, unpinAxis: false, tickDensity: default, tickDensityCustom: 5,
-        type: linear}]
-    series_types: {}
-    series_colors:
-      metrics.adjusted_score_wow: "#FBBC04"
-    trend_lines: [{color: "#9AA0A6", label_position: right, period: 4, regression_type: average,
-        series_index: 1, show_label: true, label_type: string, label: 4 Wk. Avg.}]
-    show_null_points: true
-    interpolation: linear
-    defaults_version: 1
-    title_hidden: true
-    listen:
-      Calendar Date: metrics.measurement_date
-      Frequency: liquor_sales_predicted.frequency
-      Scenario: liquor_sales_predicted.promotion_amount
-      Promotion Date: liquor_sales_predicted.promotion_date
-      Rank By: brand_rank.rank_metric
-    row: 6
-    col: 18
-    width: 6
-    height: 4
-  - title: Signals 3
-    name: Signals 3
-    model: demand_forecasting
-    explore: liquor_sales_predicted
-    type: looker_column
-    fields: [metrics.adjusted_score_wow, metrics.measurement_week]
-    filters:
-      metrics.is_iowa: 'Yes'
-      brand_rank.rank: '3'
-    sorts: [metrics.measurement_week]
-    limit: 500
-    column_limit: 50
-    query_timezone: America/Los_Angeles
-    x_axis_gridlines: false
-    y_axis_gridlines: false
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: false
-    show_x_axis_ticks: false
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    point_style: none
-    show_value_labels: true
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    y_axes: [{label: '', orientation: left, series: [{axisId: metrics.adjusted_score_wow,
-            id: metrics.adjusted_score_wow, name: Index WoW}], showLabels: false,
-        showValues: false, unpinAxis: false, tickDensity: default, tickDensityCustom: 5,
-        type: linear}]
-    series_types: {}
-    series_colors:
-      metrics.adjusted_score_wow: "#FBBC04"
-    trend_lines: [{color: "#9AA0A6", label_position: right, period: 4, regression_type: average,
-        series_index: 1, show_label: true, label_type: string, label: 4 Wk. Avg.}]
-    show_null_points: true
-    interpolation: linear
-    defaults_version: 1
-    title_hidden: true
-    listen:
-      Calendar Date: metrics.measurement_date
-      Frequency: liquor_sales_predicted.frequency
-      Scenario: liquor_sales_predicted.promotion_amount
-      Promotion Date: liquor_sales_predicted.promotion_date
-      Rank By: brand_rank.rank_metric
-    row: 10
-    col: 18
-    width: 6
-    height: 4
-  - title: Signals 4
-    name: Signals 4
-    model: demand_forecasting
-    explore: liquor_sales_predicted
-    type: looker_column
-    fields: [metrics.adjusted_score_wow, metrics.measurement_week]
-    filters:
-      metrics.is_iowa: 'Yes'
-      brand_rank.rank: '4'
-    sorts: [metrics.measurement_week]
-    limit: 500
-    column_limit: 50
-    query_timezone: America/Los_Angeles
-    x_axis_gridlines: false
-    y_axis_gridlines: false
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: false
-    show_x_axis_ticks: false
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    point_style: none
-    show_value_labels: true
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    y_axes: [{label: '', orientation: left, series: [{axisId: metrics.adjusted_score_wow,
-            id: metrics.adjusted_score_wow, name: Index WoW}], showLabels: false,
-        showValues: false, unpinAxis: false, tickDensity: default, tickDensityCustom: 5,
-        type: linear}]
-    series_types: {}
-    series_colors:
-      metrics.adjusted_score_wow: "#FBBC04"
-    trend_lines: [{color: "#9AA0A6", label_position: right, period: 4, regression_type: average,
-        series_index: 1, show_label: true, label_type: string, label: 4 Wk. Avg.}]
-    show_null_points: true
-    interpolation: linear
-    defaults_version: 1
-    title_hidden: true
-    listen:
-      Calendar Date: metrics.measurement_date
-      Frequency: liquor_sales_predicted.frequency
-      Scenario: liquor_sales_predicted.promotion_amount
-      Promotion Date: liquor_sales_predicted.promotion_date
-      Rank By: brand_rank.rank_metric
-    row: 14
-    col: 18
-    width: 6
-    height: 4
-  - title: Signals 5
-    name: Signals 5
-    model: demand_forecasting
-    explore: liquor_sales_predicted
-    type: looker_column
-    fields: [metrics.adjusted_score_wow, metrics.measurement_week]
-    filters:
-      metrics.is_iowa: 'Yes'
-      brand_rank.rank: '5'
-    sorts: [metrics.measurement_week]
-    limit: 500
-    column_limit: 50
-    query_timezone: America/Los_Angeles
-    x_axis_gridlines: false
-    y_axis_gridlines: false
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: false
-    show_x_axis_ticks: false
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    point_style: none
-    show_value_labels: true
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    y_axes: [{label: '', orientation: left, series: [{axisId: metrics.adjusted_score_wow,
-            id: metrics.adjusted_score_wow, name: Index WoW}], showLabels: false,
-        showValues: false, unpinAxis: false, tickDensity: default, tickDensityCustom: 5,
-        type: linear}]
-    series_types: {}
-    series_colors:
-      metrics.adjusted_score_wow: "#FBBC04"
-    trend_lines: [{color: "#9AA0A6", label_position: right, period: 4, regression_type: average,
-        series_index: 1, show_label: true, label_type: string, label: 4 Wk. Avg.}]
-    show_null_points: true
-    interpolation: linear
-    defaults_version: 1
-    title_hidden: true
-    listen:
-      Calendar Date: metrics.measurement_date
-      Frequency: liquor_sales_predicted.frequency
-      Scenario: liquor_sales_predicted.promotion_amount
-      Promotion Date: liquor_sales_predicted.promotion_date
-      Rank By: brand_rank.rank_metric
-    row: 18
-    col: 18
-    width: 6
-    height: 4
+    row: 26
+    col: 9
+    width: 8
+    height: 6
   - title: Revenue 1
     name: Revenue 1
     model: demand_forecasting
@@ -1061,9 +746,9 @@
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
     row: 2
-    col: 12
-    width: 6
-    height: 4
+    col: 17
+    width: 7
+    height: 6
   - title: Revenue 2
     name: Revenue 2
     model: demand_forecasting
@@ -1135,10 +820,10 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 6
-    col: 12
-    width: 6
-    height: 4
+    row: 8
+    col: 17
+    width: 7
+    height: 6
   - title: Revenue 3
     name: Revenue 3
     model: demand_forecasting
@@ -1210,10 +895,10 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 10
-    col: 12
-    width: 6
-    height: 4
+    row: 14
+    col: 17
+    width: 7
+    height: 6
   - title: Revenue 4
     name: Revenue 4
     model: demand_forecasting
@@ -1285,10 +970,10 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 14
-    col: 12
-    width: 6
-    height: 4
+    row: 20
+    col: 17
+    width: 7
+    height: 6
   - title: Revenue 5
     name: Revenue 5
     model: demand_forecasting
@@ -1360,10 +1045,10 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 18
-    col: 12
-    width: 6
-    height: 4
+    row: 26
+    col: 17
+    width: 7
+    height: 6
   - title: Metric 1
     name: Metric 1
     model: demand_forecasting
@@ -1394,8 +1079,8 @@
       Rank By: brand_rank.rank_metric
     row: 2
     col: 3
-    width: 3
-    height: 2
+    width: 6
+    height: 3
   - title: Map 1
     name: Map 1
     model: demand_forecasting
@@ -1474,10 +1159,10 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 4
+    row: 5
     col: 3
-    width: 3
-    height: 2
+    width: 6
+    height: 3
   - title: Map 2
     name: Map 2
     model: demand_forecasting
@@ -1556,10 +1241,10 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 8
+    row: 11
     col: 3
-    width: 3
-    height: 2
+    width: 6
+    height: 3
   - title: Metric 2
     name: Metric 2
     model: demand_forecasting
@@ -1588,10 +1273,10 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 6
+    row: 8
     col: 3
-    width: 3
-    height: 2
+    width: 6
+    height: 3
   - title: Map 3
     name: Map 3
     model: demand_forecasting
@@ -1670,10 +1355,10 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 12
+    row: 17
     col: 3
-    width: 3
-    height: 2
+    width: 6
+    height: 3
   - title: Metric 3
     name: Metric 3
     model: demand_forecasting
@@ -1702,10 +1387,10 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 10
+    row: 14
     col: 3
-    width: 3
-    height: 2
+    width: 6
+    height: 3
   - title: Metric 4
     name: Metric 4
     model: demand_forecasting
@@ -1734,10 +1419,10 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 14
+    row: 20
     col: 3
-    width: 3
-    height: 2
+    width: 6
+    height: 3
   - title: Map 4
     name: Map 4
     model: demand_forecasting
@@ -1816,10 +1501,10 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 16
+    row: 23
     col: 3
-    width: 3
-    height: 2
+    width: 6
+    height: 3
   - title: Map 5
     name: Map 5
     model: demand_forecasting
@@ -1898,10 +1583,10 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 20
+    row: 29
     col: 3
-    width: 3
-    height: 2
+    width: 6
+    height: 3
   - title: Metric 5
     name: Metric 5
     model: demand_forecasting
@@ -1930,18 +1615,18 @@
       Scenario: liquor_sales_predicted.promotion_amount
       Promotion Date: liquor_sales_predicted.promotion_date
       Rank By: brand_rank.rank_metric
-    row: 18
+    row: 26
     col: 3
-    width: 3
-    height: 2
+    width: 6
+    height: 3
   - name: ''
     type: text
     title_text: ''
     subtitle_text: Bottles Sold
     body_text: ''
     row: 0
-    col: 6
-    width: 6
+    col: 7
+    width: 8
     height: 2
   - name: " (2)"
     type: text
@@ -1949,19 +1634,10 @@
     subtitle_text: Revenue
     body_text: ''
     row: 0
-    col: 12
-    width: 6
+    col: 15
+    width: 9
     height: 2
   - name: " (3)"
-    type: text
-    title_text: ''
-    subtitle_text: DEMAND Signals
-    body_text: ''
-    row: 0
-    col: 18
-    width: 6
-    height: 2
-  - name: " (4)"
     type: text
     title_text: ''
     subtitle_text: ''
@@ -1975,7 +1651,7 @@
       #categories\">Categories</a>\n</nav>\n</div>"
     row: 0
     col: 0
-    width: 6
+    width: 7
     height: 2
   filters:
   - name: Rank By
@@ -1998,7 +1674,7 @@
   - name: Calendar Date
     title: Calendar Date
     type: field_filter
-    default_value: last quarter
+    default_value: 2020/01/01 to 2020/07/02
     allow_multiple_values: true
     required: false
     ui_config:
@@ -2009,6 +1685,22 @@
     explore: liquor_sales_predicted
     listens_to_filters: []
     field: liquor_sales_predicted.calendar_date
+  - name: Brands Included
+    title: Brands Included
+    type: field_filter
+    default_value: "[0,5]"
+    allow_multiple_values: true
+    required: false
+    ui_config:
+      type: range_slider
+      display: inline
+      options:
+        min: 0
+        max: 10
+    model: demand_forecasting
+    explore: liquor_sales_predicted
+    listens_to_filters: []
+    field: brand_rank.rank
   - name: Apply Scenario (Yes/No)
     title: Apply Scenario (Yes/No)
     type: field_filter
@@ -2075,19 +1767,3 @@
     explore: liquor_sales_predicted
     listens_to_filters: []
     field: liquor_sales_predicted.promotion_date
-  - name: Brands Included
-    title: Brands Included
-    type: field_filter
-    default_value: "[0,5]"
-    allow_multiple_values: true
-    required: false
-    ui_config:
-      type: range_slider
-      display: inline
-      options:
-        min: 0
-        max: 10
-    model: demand_forecasting
-    explore: liquor_sales_predicted
-    listens_to_filters: []
-    field: brand_rank.rank

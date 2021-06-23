@@ -1,5 +1,5 @@
 view: predictions {
-  sql_table_name: `camus-demandforecasting.prediction_training_validation_2weeks_v1_2020_07_08T06_43_16_117Z.predictions`
+  sql_table_name: `looker-private-demo.liquor_sales.LR_FRW3A1624363204268_liquor_sales_predicted`
     ;;
 
   dimension: address {

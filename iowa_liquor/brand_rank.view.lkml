@@ -15,7 +15,7 @@ view: brand_rank {
         (COALESCE(SUM(((liquor_sales_predicted.state_bottle_retail*(1-
         CASE WHEN 1 > 1 THEN NULL ELSE 0 END))*(liquor_sales_predicted.predicted_total_bottles_sold*1)) ), 0))/(COALESCE(SUM((liquor_sales_predicted.predicted_total_bottles_sold*1) ), 0))
         {% endif %} as metric
-        FROM ${liquor_sales_predicted.SQL_TABLE_NAME} as liquor_sales_predicted
+        FROM looker-private-demo.liquor_sales.LR_FRW3A1624363204268_liquor_sales_predicted as liquor_sales_predicted
         WHERE liquor_sales_predicted.brand IS NOT NULL AND liquor_sales_predicted.brand != 'All Other Brands'
         GROUP BY 1
         ) a

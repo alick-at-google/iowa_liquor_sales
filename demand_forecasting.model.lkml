@@ -4,7 +4,6 @@ include: "/iowa_liquor/*.view.lkml"
 include: "/signals/*.view.lkml"
 include: "/dashboards/*.dashboard"
 
-persist_for: "24 hours"
 
 explore: liquor_sales_historic_predicted {
   group_label: "Retail Demand Forecasting"

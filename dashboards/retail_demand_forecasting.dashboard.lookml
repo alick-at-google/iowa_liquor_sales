@@ -9,7 +9,6 @@
     explore: liquor_sales_predicted
     type: single_value
     fields: [liquor_sales_predicted.actual_plus_forecasted_revenue]
-    filters: {}
     limit: 500
     column_limit: 50
     dynamic_fields: [{table_calculation: goal, label: Goal, expression: '120000000+${liquor_sales_predicted.actual_plus_forecasted_revenue}-${liquor_sales_predicted.actual_plus_forecasted_revenue}',
@@ -52,7 +51,6 @@
       liquor_sales_predicted.forecasted_gross_margin_filtered_with_promotion, liquor_sales_predicted.total_predicted_revenue,
       liquor_sales_predicted.total_predicted_gross_margin]
     fill_fields: [liquor_sales_predicted.calendar_date]
-    filters: {}
     sorts: [liquor_sales_predicted.calendar_date]
     limit: 500
     column_limit: 50
@@ -149,7 +147,6 @@
     explore: liquor_sales_predicted
     type: single_value
     fields: [liquor_sales_predicted.actual_plus_forecasted_gross_margin, liquor_sales_predicted.actual_plus_forecasted_revenue]
-    filters: {}
     limit: 500
     column_limit: 50
     dynamic_fields: [{table_calculation: margin, label: Margin, expression: "${liquor_sales_predicted.actual_plus_forecasted_gross_margin}/${liquor_sales_predicted.actual_plus_forecasted_revenue}",
@@ -284,82 +281,12 @@
     col: 0
     width: 5
     height: 3
-  - title: Signals
-    name: Signals
-    model: demand_forecasting
-    explore: liquor_sales_predicted
-    type: looker_column
-    fields: [metrics.adjusted_score_wow, metrics.measurement_week]
-    fill_fields: [metrics.measurement_week]
-    filters:
-      metrics.is_iowa: 'Yes'
-      metrics.term: jack daniels
-    sorts: [metrics.measurement_week]
-    limit: 500
-    column_limit: 50
-    query_timezone: America/Los_Angeles
-    x_axis_gridlines: false
-    y_axis_gridlines: false
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: false
-    show_x_axis_ticks: false
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    point_style: none
-    show_value_labels: true
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    y_axes: [{label: '', orientation: left, series: [{axisId: metrics.adjusted_score_wow,
-            id: metrics.adjusted_score_wow, name: Index WoW}], showLabels: false,
-        showValues: false, unpinAxis: false, tickDensity: default, tickDensityCustom: 5,
-        type: linear}]
-    series_types: {}
-    series_colors:
-      metrics.adjusted_score_wow: "#FBBC04"
-    trend_lines: [{color: "#9AA0A6", label_position: right, period: 4, regression_type: average,
-        series_index: 1, show_label: true, label_type: string, label: 4 Wk. Avg.}]
-    show_null_points: true
-    interpolation: linear
-    defaults_version: 1
-    title_hidden: true
-    listen:
-      Calendar Date: metrics.measurement_date
-    row: 16
-    col: 5
-    width: 19
-    height: 4
-  - name: " (3)"
-    type: text
-    title_text: ''
-    subtitle_text: DEMAND Signals
-    body_text: "<center>Indexed Search Data from DEMAND</center>"
-    row: 17
-    col: 0
-    width: 5
-    height: 3
   - title: AUR
     name: AUR
     model: demand_forecasting
     explore: liquor_sales_predicted
     type: single_value
     fields: [liquor_sales_predicted.predicted_aur_promotion]
-    filters: {}
     limit: 500
     query_timezone: America/Los_Angeles
     custom_color_enabled: true
@@ -393,7 +320,6 @@
     type: looker_column
     fields: [liquor_sales_predicted.calendar_date, liquor_sales_predicted.actual_plus_forecasted_bottles,
       liquor_sales_predicted.promotion_boost]
-    filters: {}
     sorts: [liquor_sales_predicted.calendar_date]
     limit: 500
     column_limit: 50
@@ -478,7 +404,7 @@
     merged_queries:
     - model: demand_forecasting
       explore: liquor_sales_predicted
-      type: looker_column
+      type: table
       fields: [holidays.date_date, count_of_holiday_event]
       fill_fields: [holidays.date_date]
       filters:
@@ -492,72 +418,7 @@
             \ > 1"}, {measure: count_of_holiday_event, based_on: holidays.name, expression: '',
           label: Count of Holiday Event, type: count_distinct, _kind_hint: measure,
           _type_hint: number}]
-      x_axis_gridlines: false
-      y_axis_gridlines: false
-      show_view_names: false
-      show_y_axis_labels: true
-      show_y_axis_ticks: true
-      y_axis_tick_density: default
-      y_axis_tick_density_custom: 5
-      show_x_axis_label: false
-      show_x_axis_ticks: false
-      y_axis_scale_mode: linear
-      x_axis_reversed: false
-      y_axis_reversed: false
-      plot_size_by_field: false
-      trellis: ''
-      stacking: normal
-      limit_displayed_rows: false
-      legend_position: center
-      point_style: none
-      show_value_labels: false
-      label_density: 25
-      x_axis_scale: auto
-      y_axis_combined: true
-      ordering: none
-      show_null_labels: false
-      show_totals_labels: false
-      show_silhouette: false
-      totals_color: "#808080"
-      y_axes: [{label: '', orientation: left, series: [{axisId: count_of_promotion_boost,
-              id: count_of_promotion_boost, name: Count of Promotion Boost}], showLabels: false,
-          showValues: false, unpinAxis: false, tickDensity: default, tickDensityCustom: 5,
-          type: linear}]
-      series_types: {}
-      series_colors:
-        count_of_holiday_event: "#EA4335"
-      map: topojson
-      map_projection: ''
-      map_url: https://raw.githubusercontent.com/deldersveld/topojson/master/countries/us-states/IA-19-iowa-counties.json
-      point_color: "#4285F4"
-      point_radius: 3
-      custom_color_enabled: true
-      custom_color: "#FBBC04"
-      show_single_value_title: false
-      value_format: $0.00,,"M"
-      show_comparison: true
-      comparison_type: value
-      comparison_reverse_colors: false
-      show_comparison_label: true
-      comparison_label: Gross Margin
-      enable_conditional_formatting: true
-      conditional_formatting: [{type: equal to, value: !!null '', background_color: "#4285F4",
-          font_color: !!null '', color_application: {collection_id: google, palette_id: google-sequential-0},
-          bold: false, italic: false, strikethrough: false, fields: !!null ''}]
-      conditional_formatting_include_totals: false
-      conditional_formatting_include_nulls: false
-      defaults_version: 1
-      hidden_fields: []
-      show_row_numbers: true
-      transpose: false
-      truncate_text: true
-      hide_totals: false
-      hide_row_totals: false
-      size_to_fit: true
-      table_theme: white
-      header_text_alignment: left
-      header_font_size: 12
-      rows_font_size: 12
+      join_fields: []
     - model: demand_forecasting
       explore: liquor_sales_predicted
       type: table
@@ -613,6 +474,7 @@
     totals_color: "#808080"
     type: looker_column
     hidden_fields: [liquor_sales_predicted.actual_plus_forecasted_bottles, count_of_holiday_event]
+    column_limit: 50
     dynamic_fields: [{table_calculation: holiday, label: Holiday, expression: "if(${count_of_holiday_event}>0\
           \ AND is_null(${liquor_sales_predicted.actual_plus_forecasted_bottles})\
           \ AND is_null(offset(${liquor_sales_predicted.actual_plus_forecasted_bottles},-1)),offset(${liquor_sales_predicted.actual_plus_forecasted_bottles},1),\n\
@@ -642,7 +504,6 @@
     type: looker_column
     fields: [liquor_sales_predicted.calendar_date, liquor_sales_predicted.actual_plus_forecasted_revenue,
       liquor_sales_predicted.type]
-    filters: {}
     sorts: [liquor_sales_predicted.calendar_date]
     limit: 500
     column_limit: 50
@@ -723,7 +584,7 @@
     col: 4
     width: 20
     height: 4
-  - name: " (4)"
+  - name: " (3)"
     type: text
     title_text: ''
     subtitle_text: ''
@@ -769,7 +630,7 @@
   - name: Calendar Date
     title: Calendar Date
     type: field_filter
-    default_value: last quarter
+    default_value: 2020/01/01 to 2020/07/02
     allow_multiple_values: true
     required: false
     ui_config:
